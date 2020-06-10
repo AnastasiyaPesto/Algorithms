@@ -5,26 +5,14 @@ import java.util.List;
 
 public class TraverseTree {
 
-  private static List<Integer> preorderTraversalRecursive(TreeNode root) {
+  public static List<Integer> preorderTraversalRecursive(TreeNode root) {
     List<Integer> res = new ArrayList<>();
     if (root == null)
       return res;
-    res.add(root.val);
-    res.addAll(preorderTraversalRecursive (root.left));
-    res.addAll(preorderTraversalRecursive (root.right));
+    res.add(root.getVal());
+    res.addAll(preorderTraversalRecursive(root.getLeft()));
+    res.addAll(preorderTraversalRecursive(root.getRight()));
     return res;
   }
 
-  static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-      this.val = val;
-      this.left = left;
-      this.right = right;
-    }
-  }
 }
